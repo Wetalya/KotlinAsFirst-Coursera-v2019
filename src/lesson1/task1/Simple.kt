@@ -4,19 +4,24 @@ package lesson1.task1
 
 import kotlin.math.*
 
+
 /**
  * Пример
  *
  * Вычисление квадрата целого числа
  */
-fun sqr(x: Int) = x * x
+fun sqr(x: Int): Int {
+    return x * x
+}
 
 /**
  * Пример
  *
  * Вычисление квадрата вещественного числа
  */
-fun sqr(x: Double) = x * x
+fun sqr(x: Double): Double {
+    return x * x
+}
 
 /**
  * Пример
@@ -49,8 +54,8 @@ fun quadraticRootProduct(a: Double, b: Double, c: Double): Double {
  * Пример главной функции
  */
 fun main() {
-    val x1x2 = quadraticRootProduct(1.0, 13.0, 42.0)
-    println("Root product: $x1x2")
+    val result = angleInRadian(36, 14, 35)
+    println("rad = $result")
 }
 
 /**
@@ -76,7 +81,17 @@ fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = TODO()
  * Пользователь задает угол в градусах, минутах и секундах (например, 36 градусов 14 минут 35 секунд).
  * Вывести значение того же угла в радианах (например, 0.63256).
  */
-fun angleInRadian(deg: Int, min: Int, sec: Int): Double = TODO()
+/*
+fun angleInRadian(deg: Int, min: Int, sec: Int): Double {
+    val degToRad = deg * PI / 180
+    val minToRad = min * PI / (180 * 60)
+    val secToRad = sec * PI / (180 * 3600)
+    return degToRad + minToRad + secToRad
+}
+*/
+
+fun sum(vararg items: Double): Double = items.sum()
+fun angleInRadian(deg: Int, min: Int, sec: Int): Double = sum(deg * PI, min * PI / 60, sec * PI / 3600) / 180
 
 /**
  * Тривиальная
